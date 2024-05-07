@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script>
+            function myFunction(){
+                var score = 0;
+                var question1 = document.getElementsByName("Question1");
+                var question2 = document.getElementsByName("Question2");
+                var question3 = document.getElementsByName("Question3");
+
+                for (let i = 0 ; i < question1.length ; i++ ){
+                    if(question1[i].checked == true){
+                        var ans1 = question1[i].value;
+                    }
+                }
+                for (let i = 0 ; i < question2.length ; i++ ){
+                    if(question2[i].checked == true){
+                        var ans2 = question2[i].value;
+                    }
+                }
+                for (let i = 0 ; i < question3.length ; i++ ){
+                    if(question3[i].checked == true){
+                        var ans3 = question3[i].value;
+                    }
+                }
+                
+                var cans1 = "1option3";
+                var cans2 = "2option3";
+                var cans3 = "3option2";
+                var cans3a = "3option1";
+
+                if(ans1 == cans1){
+                    score ++;
+                }
+                if(ans2 == cans2){
+                    score ++;
+                }
+                if(ans3 == cans3 || ans3 == cans3a){
+                    score ++;
+                }
+
+                document.getElementById("test").innerHTML = score;
+                
+            }
+        </script>
+
+        <style>
+            *{
+                font-family: monospace;
+                font-size : 20px;
+            }
+            .Question1{
+                border: 2px solid black;
+                background-color: rgb(15, 68, 22);
+                position : static;
+                color : white;
+                border-radius: 20px;
+                margin-bottom: 10px;
+            }
+            .cont1{
+                position: relative;
+                left : 2%;
+            }
+            .Question2{
+                border: 2px solid black;
+                background-color: rgb(15, 68, 22);
+                position : static;
+                color : white;
+                border-radius: 20px;
+                margin-bottom: 10px;
+            }
+            .cont2{
+                position: relative;
+                left : 2%;
+            }
+            .Question3{
+                border: 2px solid black;
+                background-color: rgb(15, 68, 22);
+                position : static;
+                color : white;
+                border-radius: 20px;
+                margin-bottom: 25px;
+            }
+            .cont3{
+                position: relative;
+                left : 2%;
+            }
+
+            #submit{
+                height: 60px;
+                width : 150px;
+                border-radius: 20px;
+                background-color: darkgreen;
+                color : white;
+            }
+            #submit:hover{
+                background-color: rgb(4, 8, 4);
+                animation: transitionbutton 0.5s;
+            }
+            label:hover{
+                font-size: 22px;
+                color : rgb(177, 177, 177);
+            }
+            #test{
+                font-size: 50px;
+                animation : transitionIn 5s;
+            }
+            @keyframes transitionIn{
+                from{
+                    opacity: 0;
+                }
+                to{
+                    opacity: 1;
+                }
+            }
+            @keyframes transitionbutton{
+                from{
+                    background-color: darkgreen;
+                }
+                to{
+                    background-color: black;
+                }
+            }
+             
+        </style>
+    </head>
+
+    <body style = "background-color: rgb(196, 255, 196);">
+
+        <div class = "Question1">
+            <div class = "cont1">
+        <p>Question 1 : Who is the president of INDIA ?</p>
+        
+        <input type = "radio" value = "1option1" name = "Question1" id = "1option1">
+        <label for = "1option1">Ramnath Govind</label><br>
+        
+        <input type = "radio" value = "1option2" name = "Question1" id = "1option2">
+        <label for = "1option2">Pranab mukherjee</label><br>
+        
+        <input type = "radio" value = "1option3" name = "Question1" id = "1option3">
+        <label for = "1option3">Droupadi murmu</label><br>
+        
+        <input type = "radio" value = "1option4" name = "Question1" id = "1option4">
+        <label for = "1option4">Thalapathy Vijay</label><br><br>
+        </div></div>
+
+        <div class = "Question2">
+            <div class = "cont2">
+        <p>Question 2 : Which among the following has money yet begs for it ?</p>
+
+        <input type = "radio" value = "2option1" name = "Question2" id = "2option1">
+        <label for="2option1">Ambani</label><br>
+
+        <input type = "radio" value = "2option2" name = "Question2" id = "2option2">
+        <label for="2option2">Adani</label><br>
+
+        <input type = "radio" value = "2option3" name = "Question2" id = "2option3">
+        <label for="2option3">Moneesh</label><br>
+
+        <input type = "radio" value = "2option4" name = "Question2" id = "2option4">
+        <label for="2option4">Vijay mallya</label><br><br>
+        </div></div>
+
+        <div class = "Question3">
+            <div class = "cont3">
+        <p>Question 3 : Spot the gay among the four options.</p>
+        <input type = "radio" value = "3option1" name = "Question3" id = "3option1">
+        <label for="3option1">Moneesh</label><br>
+
+        <input type = "radio" value = "3option2" name = "Question3" id = "3option2">
+        <label for="3option2">Akshat</label><br>
+
+        <input type = "radio" value = "3option3" name = "Question3" id = "3option3">
+        <label for="3option3">Anantha</label><br>
+
+        <input type = "radio" value = "3option4" name = "Question3" id = "3option4">
+        <label for="3option4">Varma</label><br><br><br>
+        </div></div>
+
+        <button onclick = "myFunction()" id = "submit">Submit</button><br>
+
+        <span style = "font-size: 25px;">Your Score Of this Quiz out of 3!</span>&nbsp&nbsp
+        <span id = "test"></span>
+    </body>
+</html>
